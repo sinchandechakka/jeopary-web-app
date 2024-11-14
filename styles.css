@@ -1,0 +1,130 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #432E54;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  padding: 20px;
+}
+
+.jeopardy-board {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 10px;
+  height: 10%;
+  width: 70%;
+  max-width: 90%;
+}
+
+.box {
+  background-color: #E8BCB9;
+  color: #000000;
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  padding: 20px;
+  border: 3px solid #432E54;
+  cursor: pointer;
+  transition: transform 0.2s, background-color 0.2s;
+  aspect-ratio: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.box.header {
+  background-color: #eaaba7;
+  cursor: default;
+  font-size: 1.2rem;
+  padding: 15px 5px;
+}
+
+.box:not(.header):hover {
+  transform: scale(1.05);
+  background-color: #df7e77;
+}
+
+.box.clicked {
+  background-color: #AE445A;
+  color: #ffffff;
+  border-color: #000000;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background-color: #2e937f;
+  color: #102121;
+  padding: 40px;
+  border-radius: 8px;
+  width: 80%;
+  max-width: 600px;
+  text-align: center;
+  position: relative;
+  border: 3px solid #FFFFFF;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 2rem;
+  cursor: pointer;
+  color: #FFFFFF;
+}
+
+.close:hover {
+  color: #00ffd5;
+}
+
+#question-text {
+  font-size: 1.8rem;
+  margin-bottom: 30px;
+}
+
+#question-text img {
+  max-height: 100px;
+  width: auto;
+  background-color: #FFFFFF;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+#answer-text {
+  margin-top: 25px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #FFFFFF;
+  display: none;
+}
+
+#show-answer-button {
+  background-color: #c8b292;
+  color: #677D6A;
+  border: none;
+  padding: 15px 30px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: background-color 0.2s;
+}
+
+#show-answer-button:hover {
+  background-color: #ffe0b2;
+}
